@@ -1,0 +1,38 @@
+[package]
+name = "falcon-r1cs"
+description = "R1CS Falcon verification circuit"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+falcon-rust = { path = "../falcon-rust", default-features = false }
+ark-ed-on-bn254 = { version = "^0.3.0", default-features = false, features=["r1cs"] }
+ark-ff = { version = "^0.3.0", default-features = false }
+ark-ec = { version = "^0.3.0", default-features = false }
+ark-groth16 = { version = "^0.3.0", default-features = false }
+ark-r1cs-std = { version = "^0.3.0", default-features = false }
+ark-relations = { version = "^0.3.0", default-features = false }
+ark-std = { version = "^0.3.0", default-features = false }
+arkworks-solidity-verifier = "0.1.0"
+wasm-bindgen = "0.2.91"
+num-bigint = "0.4.4"
+ark-bn254 = { version = "^0.3.0", default-features = false, features=["curve"] }
+rand_chacha = "0.3.1"
+ark-snark = { version = "^0.3.0", default-features = false }
+ark-serialize = { version = "^0.3.0", default-features = false }
+ark-crypto-primitives = { version = "^0.3.0", default-features = false, features=["r1cs"] }
+hex = "0.4.3"
+arkworks-r1cs-gadgets = "1.2.0"
+arkworks-native-gadgets = "1.2.0"
+arkworks-utils = { version = "1.0.1", default-features = false, features = ["poseidon_bn254_x5_3", "mimc_ed_on_bn254_220"] }
+
+[dev-dependencies]
+ark-groth16 = { version = "^0.3.0", default-features = false, features = ["print-trace"] }
+
+[features]
+default = [ "falcon-512", "parallel" ]
+falcon-512 = [ "falcon-rust/falcon-512" ]
+falcon-1024 = [ "falcon-rust/falcon-1024" ]
+parallel = [ ]

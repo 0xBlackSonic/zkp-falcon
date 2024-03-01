@@ -1,0 +1,22 @@
+[package]
+name = "falcon-rust"
+description = "Rust wrapper for falcon Signature scheme"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libc = "0.2.153"
+rand_chacha = "0.3.1"
+rand_core = "0.6.4"
+zeroize = "1.7.0"
+
+[build-dependencies]
+cc = { version = "1.0.83", features = ["parallel"] }
+
+[features]
+default = [ "falcon-512" ]
+falcon-512 = [ ]
+falcon-1024 = [ ]

@@ -1,0 +1,6 @@
+[workspace]
+members = [ "falcon-r1cs",
+  "falcon-r1cs",
+  "falcon-rust"
+]
+

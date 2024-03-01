@@ -1,0 +1,5 @@
+/target
+/falcon-r1cs/out
+
+.vscode
+.DS_Store
